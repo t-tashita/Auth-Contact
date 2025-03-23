@@ -1,0 +1,127 @@
+
+
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	modified:   docker-compose.yml
+#	modified:   docker/mysql/data/.gitkeep
+#	modified:   docker/mysql/my.cnf
+#	modified:   docker/nginx/default.conf
+#	modified:   docker/php/Dockerfile
+#	modified:   docker/php/php.ini
+#	modified:   src/.editorconfig
+#	modified:   src/.env.example
+#	modified:   src/.gitattributes
+#	modified:   src/.gitignore
+#	modified:   src/.styleci.yml
+#	modified:   src/README.md
+#	modified:   src/app/Console/Kernel.php
+#	modified:   src/app/Exceptions/Handler.php
+#	modified:   src/app/Http/Controllers/Controller.php
+#	modified:   src/app/Http/Kernel.php
+#	modified:   src/app/Http/Middleware/Authenticate.php
+#	modified:   src/app/Http/Middleware/EncryptCookies.php
+#	modified:   src/app/Http/Middleware/PreventRequestsDuringMaintenance.php
+#	modified:   src/app/Http/Middleware/RedirectIfAuthenticated.php
+#	modified:   src/app/Http/Middleware/TrimStrings.php
+#	modified:   src/app/Http/Middleware/TrustHosts.php
+#	modified:   src/app/Http/Middleware/TrustProxies.php
+#	modified:   src/app/Http/Middleware/VerifyCsrfToken.php
+#	modified:   src/app/Models/User.php
+#	modified:   src/app/Providers/AppServiceProvider.php
+#	modified:   src/app/Providers/AuthServiceProvider.php
+#	modified:   src/app/Providers/BroadcastServiceProvider.php
+#	modified:   src/app/Providers/EventServiceProvider.php
+#	modified:   src/app/Providers/RouteServiceProvider.php
+#	modified:   src/bootstrap/app.php
+#	modified:   src/bootstrap/cache/.gitignore
+#	modified:   src/composer.json
+#	modified:   src/composer.lock
+#	modified:   src/config/app.php
+#	modified:   src/config/auth.php
+#	modified:   src/config/broadcasting.php
+#	modified:   src/config/cache.php
+#	modified:   src/config/cors.php
+#	modified:   src/config/database.php
+#	modified:   src/config/filesystems.php
+#	modified:   src/config/hashing.php
+#	modified:   src/config/logging.php
+#	modified:   src/config/mail.php
+#	modified:   src/config/queue.php
+#	modified:   src/config/sanctum.php
+#	modified:   src/config/services.php
+#	modified:   src/config/session.php
+#	modified:   src/config/view.php
+#	modified:   src/database/.gitignore
+#	modified:   src/database/factories/UserFactory.php
+#	modified:   src/database/migrations/2014_10_12_000000_create_users_table.php
+#	modified:   src/database/migrations/2014_10_12_100000_create_password_resets_table.php
+#	modified:   src/database/migrations/2019_08_19_000000_create_failed_jobs_table.php
+#	modified:   src/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php
+#	modified:   src/database/seeders/DatabaseSeeder.php
+#	modified:   src/package.json
+#	modified:   src/phpunit.xml
+#	modified:   src/public/.htaccess
+#	modified:   src/public/favicon.ico
+#	modified:   src/public/index.php
+#	modified:   src/public/robots.txt
+#	modified:   src/resources/css/app.css
+#	modified:   src/resources/js/app.js
+#	modified:   src/resources/js/bootstrap.js
+#	modified:   src/resources/lang/en/auth.php
+#	modified:   src/resources/lang/en/pagination.php
+#	modified:   src/resources/lang/en/passwords.php
+#	modified:   src/resources/lang/en/validation.php
+#	modified:   src/resources/views/welcome.blade.php
+#	modified:   src/routes/api.php
+#	modified:   src/routes/channels.php
+#	modified:   src/routes/console.php
+#	modified:   src/routes/web.php
+#	modified:   src/server.php
+#	modified:   src/storage/app/.gitignore
+#	modified:   src/storage/app/public/.gitignore
+#	modified:   src/storage/framework/.gitignore
+#	modified:   src/storage/framework/cache/.gitignore
+#	modified:   src/storage/framework/cache/data/.gitignore
+#	modified:   src/storage/framework/sessions/.gitignore
+#	modified:   src/storage/framework/testing/.gitignore
+#	modified:   src/storage/framework/views/.gitignore
+#	modified:   src/storage/logs/.gitignore
+#	modified:   src/tests/CreatesApplication.php
+#	modified:   src/tests/Feature/ExampleTest.php
+#	modified:   src/tests/TestCase.php
+#	modified:   src/tests/Unit/ExampleTest.php
+#	modified:   src/webpack.mix.js
+#
+# Untracked files:
+#	src/app/Actions/
+#	src/app/Http/Controllers/AuthController.php
+#	src/app/Http/Controllers/ContactController.php
+#	src/app/Http/Requests/
+#	src/app/Models/Category.php
+#	src/app/Models/Contact.php
+#	src/app/Providers/FortifyServiceProvider.php
+#	src/config/fortify.php
+#	src/database/migrations/2014_10_12_200000_add_two_factor_columns_to_users_table.php
+#	src/database/migrations/2025_03_21_140658_create_categories_table.php
+#	src/database/migrations/2025_03_22_185314_create_contacts_table.php
+#	src/database/seeders/CategoryTableSeeder.php
+#	src/public/css/
+#	src/resources/lang/ja/
+#	src/resources/views/Auth/
+#	src/resources/views/admin.blade.php
+#	src/resources/views/auth/
+#	src/resources/views/confirm.blade.php
+#	src/resources/views/contact.blade.php
+#	src/resources/views/layouts/
+#	src/resources/views/thanks.blade.php
+#
+u^uuu
+u
+

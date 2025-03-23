@@ -1,0 +1,27 @@
+.header {
+    background: #000;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: flex-end;
+    /* 右側に要素を寄せる */
+    align-items: center;
+    /* 縦方向の中央揃え */
+    position: relative;
+    /* `header__logo` の中央配置の基準 */
+    margin: 0 auto;
+    padding: 20px 15px;
+    max-width: 1230px;
+}
+
+.header__logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    /* 真ん中に配置 */
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
