@@ -9,7 +9,7 @@
     <div class="confirm__heading">
         <h2>Confirm</h2>
     </div>
-    <form  class="form" action="/thanks" method="post">
+    <form  class="form" action="/thanks" method="POST">
         @csrf
         <div class="confirm-table">
             <table class="confirm-table__inner">

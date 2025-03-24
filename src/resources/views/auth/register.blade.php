@@ -4,18 +4,18 @@
 <link rel="stylesheet" href="{{ asset('css/register.css') }}">
 @endsection
 
-@authentication
+@section('authentication')
 <div class="login__link">
     <a class="login__button-submit" href="/login">Login</a>
 </div>
-@endauthentication
+@endsection
 
 @section('content')
 <div class="register-form__content">
     <div class="register-form__heading">
         <h2>Register</h2>
     </div>
-    <form class="form" action="/register" method="post">
+    <form class="form" action="/register" method="post" novalidate>
         @csrf
         <div class="form__group">
         <div class="form__group-title">

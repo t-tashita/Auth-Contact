@@ -1,35 +1,96 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/index.css') }}">
+<link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+@endsection
+
+@section('authentication')
+<div class="admin__link">
+    <a class="admin__button-submit" href="/">Logout</a>
+</div>
 @endsection
 
 @section('content')
-<div class="attendance__alert">
-  // メッセージ機能
-</div>
-
-<div class="attendance__content">
-  <div class="attendance__panel">
-    <form class="attendance__button">
-      <button class="attendance__button-submit" type="submit">勤務開始</button>
-    </form>
-    <form class="attendance__button">
-      <button class="attendance__button-submit" type="submit">勤務終了</button>
-    </form>
+<div class="contact-table">
+  <div class="confirm__heading">
+    <h2>Admin</h2>
   </div>
-  <div class="attendance-table">
-    <table class="attendance-table__inner">
-      <tr class="attendance-table__row">
-        <th class="attendance-table__header">名前</th>
-        <th class="attendance-table__header">開始時間</th>
-        <th class="attendance-table__header">終了時間</th>
+  <form class="search-form" action="/admin" method="get">
+    @csrf
+    <div class="search-form__item">
+      <input class="search-form__item-input" type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" value="{{ old('keyword') }}">
+      <select class="search-form__item-select" name="gender">
+        <option value="" disabled selected>性別</option>
+        <option value="1">男性</option>
+        <option value="2">女性</option>
+        <option value="3">その他</option>
+      </select>
+      <select class="search-form__item-select" name="category_id">
+        <option value="" disabled selected>お問い合わせの種類</option>
+        @foreach ($categories as $category)
+        <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
+        @endforeach
+      </select>
+    <input type="date" id="date" name="date" value="{{ old('date') }}">
+      <button class="search-form__button-submit" type="submit">検索</button>
+      <button class="search-form__button-submit" type="reset">リセット</button>
+    </div>
+  </form>
+    <table class="contact-table__inner">
+      <tr class="contact-table__row">
+          <th class="contact-table__header-span">お名前</th>
+          <th class="contact-table__header-span">性別</th>
+          <th class="contact-table__header-span">メールアドレス</th>
+          <th class="contact-table__header-span">お問い合わせの種類</th>
       </tr>
-      <tr class="attendance-table__row">
-        <td class="attendance-table__item">サンプル太郎</td>
-        <td class="attendance-table__item">サンプル</td>
-        <td class="attendance-table__item">サンプル</td>
+      {{ $contacts->links('pagination::bootstrap-4') }}
+      @foreach ($contacts as $contact)
+      <tr class="contact-table__row">
+          <td class="contact-form__item">{{ $contact->first_name }}{{ $contact->last_name }}</td>
+          <td class="contact-form__item">
+            @php
+              $genderLabel = '';
+              switch ($contact['gender']) {
+                case '1':
+                  $genderLabel = '男性';
+                  break;
+                case '2':
+                  $genderLabel = '女性';
+                  break;
+                case '3':
+                  $genderLabel = 'その他';
+                  break;
+              }
+            @endphp
+            {{ $genderLabel }}
+          </td>
+          <td class="contact-form__item">{{ $contact->email }}</td>
+          <td class="contact-form__item">
+              <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}" />
+              @php
+                  $category = $categories->firstWhere('id', $contact['category_id']);
+              @endphp
+              {{ $category->content }}
+          </td>
+        <td class="contact-table__item">
+          <form class="delete-form" action="/contacts/delete" method="post">
+            @method('DETAIL')
+            @csrf
+            <!-- 詳細ボタン -->
+              <button class="btn btn-primary open-modal"
+                      data-bs-toggle="modal"
+                      data-bs-target="#detailModal"
+                      data-name="{{ $contact->first_name }} {{ $contact->last_name }}"
+                      data-gender="{{ $genderLabel }}"
+                      data-email="{{ $contact->email }}"
+                      data-category="{{ $category->content }}"
+                      data-message="{{ $contact->message }}">
+                詳細
+              </button>
+          </form>
+        </td>
       </tr>
+      @endforeach
     </table>
   </div>
 </div>

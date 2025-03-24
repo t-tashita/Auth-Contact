@@ -10,7 +10,7 @@
         <h2>お問い合わせありがとうございました</h2>
     </div>
     <div class="form__button">
-        <button class="form__button-submit" type="button">home</button>
+        <a class="form__button-submit" type="button" href="/">home</a>
     </div>
 </div>
 @endsection
