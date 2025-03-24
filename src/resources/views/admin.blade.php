@@ -15,18 +15,19 @@
   <div class="confirm__heading">
     <h2>Admin</h2>
   </div>
-  <form class="search-form" action="/admin" method="get">
+  <form class="search-form" action="/admin" method="post">
     @csrf
     <div class="search-form__item">
       <input class="search-form__item-input" type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" value="{{ old('keyword') }}">
       <select class="search-form__item-select" name="gender">
         <option value="" disabled selected>性別</option>
+        <option value="" >全て</option>
         <option value="1">男性</option>
         <option value="2">女性</option>
         <option value="3">その他</option>
       </select>
       <select class="search-form__item-select" name="category_id">
-        <option value="" disabled selected>お問い合わせの種類</option>
+        <option disabled selected>お問い合わせの種類</option>
         @foreach ($categories as $category)
         <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
         @endforeach
@@ -43,10 +44,10 @@
           <th class="contact-table__header-span">メールアドレス</th>
           <th class="contact-table__header-span">お問い合わせの種類</th>
       </tr>
-      {{ $contacts->links('pagination::bootstrap-4') }}
+      {{ $contacts->appends(request()->except('page'))->links('pagination::bootstrap-4') }}
       @foreach ($contacts as $contact)
       <tr class="contact-table__row">
-          <td class="contact-form__item">{{ $contact->first_name }}{{ $contact->last_name }}</td>
+          <td class="contact-form__item">{{ $contact->first_name . ' ' . $contact->last_name }}</td>
           <td class="contact-form__item">
             @php
               $genderLabel = '';

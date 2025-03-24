@@ -8,6 +8,5 @@ use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 Route::get('/', [ContactController::class, 'contact']);
 Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::post('/thanks', [ContactController::class, 'store']);
-Route::post('/login', [AuthController::class, 'Login']);
-Route::post('/register', [AuthController::class, 'Register']);
 Route::middleware('auth')->group(function () {Route::get('/admin', [AuthController::class, 'admin']);});
+Route::middleware('auth')->group(function () {Route::post('/admin', [AuthController::class, 'search']);});

@@ -17,18 +17,37 @@ class AuthController extends Controller
         $categories = Category::all();
         return view('admin', compact('contacts', 'categories'));
     }
-    public function Login(LoginRequest  $request)
+    public function search(Request $request)
     {
-        $Login = $request->only(['email', 'password']);
-        $contacts = Contact::Paginate(7);
-        $categories = Category::all();
-        return view('admin', compact('contacts', 'categories'));
+    $query = Contact::query();
+
+    // 名前やメールアドレスで検索
+    if ($request->keyword) {
+        $query->where(function($q) use ($request) {
+            $q->whereRaw("CONCAT(first_name, ' ', last_name) LIKE ?", ['%' . $request->keyword . '%'])
+            ->orWhere('email', 'like', '%' . $request->keyword . '%');
+        });
     }
-        public function Register(RegisterRequest  $request)
-    {
-        $Login = $request->only(['name','email', 'password']);
-        $categories = Category::all();
-        $contacts = Contact::Paginate(7);
-        return view('admin', compact('contacts', 'categories'));
+
+    // 性別で検索
+    if ($request->gender) {
+        $query->where('gender', $request->gender);
+    }
+
+    // カテゴリで検索
+    if ($request->category_id) {
+        $query->where('category_id', $request->category_id);
+    }
+
+    // 日付で検索
+    if ($request->date) {
+        $query->whereDate('created_at', $request->date);
+    }
+
+    $contacts = $query->Paginate(7);
+    $contacts->appends(request()->except('page'));
+    $categories = Category::all();
+
+    return view('admin', compact('contacts', 'categories'));
     }
 }
