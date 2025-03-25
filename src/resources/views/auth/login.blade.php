@@ -6,7 +6,7 @@
 
 @section('authentication')
 <div class="register__link">
-    <a class="register__button-submit" href="/register">Register</a>
+    <a class="register__button-submit" href="/register">register</a>
 </div>
 @endsection
 
@@ -38,7 +38,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                <input type="password" name="password" placeholder="coachtech1106" />
+                <input type="password" name="password" placeholder="例:coachtech1106" />
                 </div>
                 <div class="form__error">
                 @error('password')

@@ -82,7 +82,7 @@
                 <span class="form__label--required">※</span>
             </div>
             <div class="form__group-content">
-                <div class="form__input--radio">
+                <div class="form__input--tel">
                     <input type="text" name="tel_part1" placeholder="080" value="{{ old('tel_part1') }}" />
                     <span>-</span>
                     <input type="text" name="tel_part2" placeholder="1234" value="{{ old('tel_part2') }}" />

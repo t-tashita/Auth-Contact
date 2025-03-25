@@ -1,7 +1,14 @@
-.admin__link {
-    display: flex;
-    gap: 15px;
-    /* リンク間の余白 */
+.admin__button-submit {
+    display: inline-block;
+    background-color: rgb(242, 241, 241);
+    border: 1px solid rgba(137, 104, 71, 0.4);
+    color: rgba(137, 104, 71, 0.4);
+    padding: 0px 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 1px;
+    font-size: 16px;
+    font-family: serif;
 }
 
 .contact-form__content {
@@ -11,8 +18,10 @@
 }
 
 .contact-form__heading {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     text-align: center;
+    font-family: serif;
+    color: #887766;
 }
 
 .form {
@@ -24,12 +33,14 @@
 .form__group {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
+}
+
+.form__label--item {
+    color: #887766;
 }
 
 .form__label--required {
-    margin-left: 5px;
-    padding: 4px 6px;
+    padding: 0px 0px;
     border-radius: 3px;
     background: #fafafa;
     color: #ff0000;
@@ -41,65 +52,64 @@
     text-align: left;
 }
 
-.form__input--name {
-    display:flex;
-    gap: 10px;
-}
-
-.form__input--tel {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.form__input--name input,
 .form__input--tel input,
 .form__input--text input,
 /* .form__input--radio input, */
-.form__input--select input {
-    height: 40px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-}
-
-.form__input--name label {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-}
-
-.form__input--text input,
 .form__input--select input,
 .form__input--textarea textarea {
+    margin: 0px;
     padding: 10px;
     width: 600px;
-    border: 1px solid #ddd;
+    height: 35px;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
     border-radius: 3px;
     appearance: none;
+    background-color: #f2f2f2;    font-size: 10px;
+    color: #887766;
 }
 
+.form__input--name input {
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    width: 286px;
+    height: 35px;
+    border: 1px solid #f2f2f2;
+    border-radius: 3px;
+    appearance: none;
+    background-color: #f2f2f2;
+    font-size: 10px;
+    color: #887766;
+}
 .form__input--tel input {
-    display:flex;
-    align-items: center;
-    gap: 5px;
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    width: 171px;
+    height: 35px;
+    border: 1px solid #f2f2f2;
+    border-radius: 3px;
+    appearance: none;
+    background-color: #f2f2f2;
+    font-size: 10px;
+    color: #887766;
 }
-
 .form__input--textarea textarea {
     height: 180px;
 }
-
-.form__button {
-    margin-top: 30px;
+.form__input--radio {
+    border-radius: 3px;
+    color: #887766;
 }
 
 .form__button-submit {
     padding: 10px;
-    width: 30%;
-    height: 50px;
+    width: 15%;
+    height: 35px;
     border: none;
-    border-radius: 3px;
-    background: #000;
+    border-radius: 1px;
+    background: #887766;
     color: #fff;
     cursor: pointer;
 }

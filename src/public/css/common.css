@@ -1,5 +1,6 @@
 .header {
-    background: #000;
+    background: #ffffff;
+    min-height: 10vh;
 }
 
 .header__inner {
@@ -11,7 +12,8 @@
     position: relative;
     /* `header__logo` の中央配置の基準 */
     margin: 0 auto;
-    padding: 20px 15px;
+    padding: 20px 90px;
+    border-bottom: 1px solid #1b1b1b3b;
     max-width: 1230px;
 }
 
@@ -22,6 +24,7 @@
     /* 真ん中に配置 */
     font-size: 24px;
     font-weight: bold;
-    color: #fff;
+    color: #887766;
     text-decoration: none;
+    font-family: serif;
 }
