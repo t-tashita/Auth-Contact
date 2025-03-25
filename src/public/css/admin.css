@@ -1,97 +1,83 @@
-.search-form__buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
+
+.logout__button-submit {
+    display: inline-block;
+    background-color: rgb(242, 241, 241);
+    border: 1px solid rgba(137, 104, 71, 0.4);
+    color: rgba(137, 104, 71, 0.4);
+    padding: 0px 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 1px;
+    font-size: 16px;
+    font-family: serif;
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: serif;
+    color: #887766;
+}
+
+.contact-table {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.search-form__item-input,
+.search-form__item-select-gender,
+.search-form__item-select-category,
+.search-form__item-date {
+    margin: 0px;
+    padding: 10px;
+    height: 35px;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 1px;
+    appearance: none;
+    background-color: #f2f2f2;
+    font-size: 10px;
+    color: #887766;
+}
+
+.search-form__item-input {
+    width: 220px;
+}
+.search-form__item-select-gender {
+    width: 60px;
+}
+.search-form__item-select-category {
+    width: 120px;
+}
+.search-form__item-date {
+    width: 120px;
 }
 
 .search-form__button-submit {
-    padding: 5px 15px;
+    padding: 10px;
+    width: 90px;
+    height: 35px;
     border: none;
     border-radius: 3px;
-    background-color: #000;
+    background: #887766;
+    color: #fff;
+    cursor: pointer;
+}
+.search-form__button-reset {
+    padding: 10px;
+    width: 90px;
+    height: 35px;
+    border: none;
+    border-radius: 3px;
+    background: #b69f89;
     color: #fff;
     cursor: pointer;
 }
 
-.attendance__alert--success {
-    padding: 10px 30px;
-    border-color: #badbcc;
-    background-color: #d1e7dd;
-    color: #0f5132;
-}
 
-.attendance__alert--danger {
-    padding: 10px 0;
-    border-color: #f5c2c7;
-    background-color: #f8d7da;
-    color: #842029;
-}
-
-.attendance__alert--danger ul {
-    margin: 0;
-}
-
-.attendance__panel {
-    margin: 0 auto;
-    width: 70%;
-}
-
-.attendance__button {
-    width: 100%;
-    text-align: center;
-}
-
-.attendance__button-submit {
-    padding: 5px;
-    width: 30%;
-    height: 50px;
-    border: none;
-    border-radius: 3px;
-    background: #000;
-    color: #fff;
-    cursor: pointer;
-}
-
-.attendance__content {
-    margin: 0 auto;
-    padding: 30px 15px;
-    max-width: 1230px;
-}
-
-.attendance-table {
-    margin: 30px auto;
-    width: 70%;
-    text-align: center;
-}
-
-.attendance-table__inner {
-    width: 100%;
-}
-
-.attendance-table__row {
-    border-bottom: 1px solid #ddd;
-}
-
-.attendance-table__header {
-    padding: 12px;
-    width: 20%;
-    font-weight: bold;
-}
-
-.attendance-table__item {
-    padding: 12px;
-    width: 20%;
-}
 .pagination {
     display: flex;
-    justify-content: center;
-    /* 中央揃え */
-    gap: 5px;
-    /* 各ページリンクの間隔 */
-}
-
-.page-item {
-    list-style: none;
+    justify-content: right;
 }
 
 .page-link {
@@ -100,16 +86,56 @@
     text-decoration: none;
     color: #333;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    font-size: 11px;
 }
 
 .page-item.active .page-link {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #887766;
+    color: #f1f1f1;
 }
 
 .page-item.disabled .page-link {
     background-color: #f1f1f1;
-    color: #ccc;
+    color: #887766;
     pointer-events: none;
+}
+
+.contact-table__inner {
+    width: 100%;
+}
+
+.contact-table__row:first-child {
+    text-align: left;
+    padding: 15px;
+    height: 40;
+    border-bottom: 1px solid #ffffff;
+    background-color: #887766;
+    color: #fff;
+    font-size: 11px;
+}
+
+.contact-table__header-span {
+    padding: 10px;
+}
+
+.contact-table__row{
+    border: 1px solid #f2f2f2;
+}
+.contact-form__item{
+    padding: 15px;
+    height: 40;
+    color: #887766;
+    font-size: 11px;
+}
+
+.contact-form__button-detail{
+    padding: 5px;
+    width: 50px;
+    height: 25px;
+    background-color: rgb(242, 241, 241);
+    border: 1px solid rgba(137, 104, 71, 0.4);
+    color: rgba(137, 104, 71, 0.4);
+    border-radius: 1px;
+    cursor: pointer;
+    font-size: 11px;
 }

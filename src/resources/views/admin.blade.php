@@ -5,8 +5,8 @@
 @endsection
 
 @section('authentication')
-<div class="admin__link">
-    <a class="admin__button-submit" href="/">Logout</a>
+<div class="logout__link">
+    <a class="logout__button-submit" href="/">Logout</a>
 </div>
 @endsection
 
@@ -19,22 +19,22 @@
     @csrf
     <div class="search-form__item">
       <input class="search-form__item-input" type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" value="{{ old('keyword') }}">
-      <select class="search-form__item-select" name="gender">
+      <select class="search-form__item-select-gender" name="gender">
         <option value="" disabled selected>性別</option>
         <option value="" >全て</option>
         <option value="1">男性</option>
         <option value="2">女性</option>
         <option value="3">その他</option>
       </select>
-      <select class="search-form__item-select" name="category_id">
+      <select class="search-form__item-select-category" name="category_id">
         <option disabled selected>お問い合わせの種類</option>
         @foreach ($categories as $category)
         <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
         @endforeach
       </select>
-    <input type="date" id="date" name="date" value="{{ old('date') }}">
+      <input type="date" class="search-form__item-date" id="date" name="date" value="{{ old('date') }}">
       <button class="search-form__button-submit" type="submit">検索</button>
-      <button class="search-form__button-submit" type="reset">リセット</button>
+      <button class="search-form__button-reset" type="reset">リセット</button>
     </div>
   </form>
     <table class="contact-table__inner">
@@ -43,6 +43,7 @@
           <th class="contact-table__header-span">性別</th>
           <th class="contact-table__header-span">メールアドレス</th>
           <th class="contact-table__header-span">お問い合わせの種類</th>
+          <th class="contact-table__header-span"></th>
       </tr>
       {{ $contacts->appends(request()->except('page'))->links('pagination::bootstrap-4') }}
       @foreach ($contacts as $contact)
@@ -74,11 +75,11 @@
               {{ $category->content }}
           </td>
         <td class="contact-table__item">
-          <form class="delete-form" action="/contacts/delete" method="post">
+          <form class="detail-form" action="/admin/delete" method="get">
             @method('DETAIL')
             @csrf
             <!-- 詳細ボタン -->
-              <button class="btn btn-primary open-modal"
+              <button class="contact-form__button-detail"
                       data-bs-toggle="modal"
                       data-bs-target="#detailModal"
                       data-name="{{ $contact->first_name }} {{ $contact->last_name }}"

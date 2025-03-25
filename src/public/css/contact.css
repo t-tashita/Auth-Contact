@@ -54,7 +54,6 @@
 
 .form__input--tel input,
 .form__input--text input,
-/* .form__input--radio input, */
 .form__input--select input,
 .form__input--textarea textarea {
     margin: 0px;
@@ -65,7 +64,8 @@
     border: 1px solid #f2f2f2;
     border-radius: 3px;
     appearance: none;
-    background-color: #f2f2f2;    font-size: 10px;
+    background-color: #f2f2f2;
+    font-size: 10px;
     color: #887766;
 }
 
